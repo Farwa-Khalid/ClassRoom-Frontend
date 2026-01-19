@@ -85,7 +85,8 @@
     "tailwindcss": "^4.1.4"
   },
   "scripts": {
-    "dev": "refine dev",
+    "dev": "refine dev --port 5173",
+
     "build": "tsc && refine build",
     "start": "refine start",
     "refine": "refine"
