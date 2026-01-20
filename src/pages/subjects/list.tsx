@@ -4,7 +4,7 @@ import {Search} from "lucide-react";
 import {Input} from "@/components/ui/input.tsx";
 import {useMemo, useState} from "react";
 import {Select, SelectContent, SelectValue,SelectTrigger,SelectItem} from "@/components/ui/select.tsx";
-import {DEPARTMENTS_OPTIONS} from "@/constants";
+import {DEPARTMENT_OPTIONS} from "@/constants";
 import {CreateButton} from "@/components/refine-ui/buttons/create.tsx";
 import {DataTable} from "@/components/refine-ui/data-table/data-table.tsx";
 import {useTable} from "@refinedev/react-table";
@@ -44,7 +44,7 @@ const SubjectsList = () => {
             },
             {
                 id:'department',
-                accessorKey:'department',
+                accessorKey:'department.name',
                 size:150,
                 header:() => <p className="column-title">Department</p>,
                 cell:({ getValue }) => <Badge variant="secondary">{getValue<string>()}</Badge>,
@@ -70,6 +70,8 @@ const SubjectsList = () => {
                ]
            },
        }
+
+
     });
     return (
         <ListView>
@@ -97,7 +99,7 @@ const SubjectsList = () => {
                                 <SelectItem value={"all"}>
                                     All Departments
                                 </SelectItem>
-                                {DEPARTMENTS_OPTIONS.map(department => (
+                                {DEPARTMENT_OPTIONS.map(department => (
                                     <SelectItem key={department.value} value={department.value}>
                                         {department.label}
                                     </SelectItem>
