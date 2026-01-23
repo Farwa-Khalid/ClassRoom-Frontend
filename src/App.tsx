@@ -54,7 +54,8 @@ function App() {
                                     create: '/classes/create',
                                     show: '/classes/show/:id',
                                     meta: { label: 'Classes', icon: <GraduationCap />}
-                                }
+                                },
+
                             ]}
                         >
                             <Routes>

@@ -11,6 +11,10 @@ import {compass} from "@cloudinary/url-gen/qualifiers/gravity";
 const cld = new Cloudinary({ cloud: { cloudName: CLOUDINARY_CLOUD_NAME }});
 
 export const bannerPhoto = (imageCldPubId: string, name: string) => {
+    if(!imageCldPubId || !name ) {
+        throw new Error('imageCldPubId must be provided');
+
+    }
     return cld
         .image(imageCldPubId)
         .resize(fill())
