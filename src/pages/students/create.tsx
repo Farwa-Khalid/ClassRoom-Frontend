@@ -31,7 +31,7 @@ const CreateStudents = () => {
     // Fetch departments
     const { query } = useList<Department>({
         resource: "departments",
-        config: { pagination: { pageSize: 100 } }, // fetch all
+         pagination: { pageSize: 100 }, // fetch all
     });
     const departments = query?.data?.data || [];
     const isLoadingDepartments = query.isLoading;
