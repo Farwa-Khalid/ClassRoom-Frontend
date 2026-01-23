@@ -12,7 +12,7 @@ import { Toaster } from "./components/refine-ui/notification/toaster";
 import { useNotificationProvider } from "./components/refine-ui/notification/use-notification-provider";
 import { ThemeProvider } from "./components/refine-ui/theme/theme-provider";
 import Dashboard from "@/pages/dashboard.tsx";
-import {BookOpen, GraduationCap, Home} from "lucide-react";
+import {BookOpen, GraduationCap, Home, Users} from "lucide-react";
 import {Layout} from "@/components/refine-ui/layout/layout.tsx";
 import SubjectsList from "@/pages/subjects/list.tsx";
 import SubjectsCreate from "@/pages/subjects/create.tsx";
@@ -20,6 +20,8 @@ import ClassesList from "@/pages/classes/list.tsx";
 import ClassesCreate from "@/pages/classes/create.tsx";
 import ClassesShow from "@/pages/classes/show.tsx";
 import {dataProvider} from "@/providers/data.ts";
+import ListStudents from "@/pages/students/list.tsx";
+import CreateStudents from "@/pages/students/create.tsx";
 
 function App() {
     return (
@@ -55,6 +57,12 @@ function App() {
                                     show: '/classes/show/:id',
                                     meta: { label: 'Classes', icon: <GraduationCap />}
                                 },
+                                {
+                                    name: 'students',
+                                    list: '/students',
+                                    create: '/students/create',
+                                    meta: { label: 'Students', icon: <Users /> }
+                                }
 
                             ]}
                         >
@@ -76,6 +84,11 @@ function App() {
                                         <Route path="create" element={<ClassesCreate />} />
                                         <Route path="show/:id" element={<ClassesShow />} />
                                     </Route>
+                                    <Route path="students">
+                                        <Route index element={<ListStudents />} />
+                                        <Route path="create" element={<CreateStudents />} />
+                                    </Route>
+
                                 </Route>
                             </Routes>
                             <Toaster />

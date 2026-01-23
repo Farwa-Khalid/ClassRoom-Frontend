@@ -38,9 +38,10 @@ const Dashboard = () => {
 
     // Students per subject (dummy example)
     const studentsPerSubjectData = subjects.map((subject, idx) => ({
-        name: subject.name,
-        students: Math.floor(Math.random() * 50) + 5, // random for demo
+        name: `${idx + 1}. ${subject.name}`,
+        students: Math.floor(Math.random() * 50) + 5,
     }));
+
 
     // Active/Inactive classes data
     const classStatusData = [
@@ -123,23 +124,23 @@ const Dashboard = () => {
                 </Card>
 
                 {/* Students per Subject */}
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Students per Subject</CardTitle>
-                    </CardHeader>
-                    <CardContent className="h-72">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <BarChart data={studentsPerSubjectData}>
-                                <CartesianGrid strokeDasharray="3 3" />
-                                <XAxis dataKey="name" />
-                                <YAxis />
-                                <Tooltip />
-                                <Legend />
-                                <Bar dataKey="students" fill="#00C49F" />
-                            </BarChart>
-                        </ResponsiveContainer>
-                    </CardContent>
-                </Card>
+                {/*<Card>*/}
+                {/*    <CardHeader>*/}
+                {/*        <CardTitle>Students per Subject</CardTitle>*/}
+                {/*    </CardHeader>*/}
+                {/*    <CardContent className="h-72">*/}
+                {/*        <ResponsiveContainer width="100%" height="100%">*/}
+                {/*            <BarChart data={studentsPerSubjectData}>*/}
+                {/*                <CartesianGrid strokeDasharray="3 3" />*/}
+                {/*                <XAxis dataKey="name" />*/}
+                {/*                <YAxis />*/}
+                {/*                <Tooltip />*/}
+                {/*                <Legend />*/}
+                {/*                <Bar dataKey="students" fill="#00C49F" />*/}
+                {/*            </BarChart>*/}
+                {/*        </ResponsiveContainer>*/}
+                {/*    </CardContent>*/}
+                {/*</Card>*/}
 
                 {/* Active vs Inactive Classes */}
                 <Card>
@@ -170,28 +171,29 @@ const Dashboard = () => {
                 </Card>
 
                 {/* Recent Enrollments Timeline (dummy for now) */}
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Recent Enrollments</CardTitle>
-                    </CardHeader>
-                    <CardContent className="h-72">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <LineChart
-                                data={studentsPerClassData.map((cls, idx) => ({
-                                    name: cls.name,
-                                    enrolled: Math.floor(Math.random() * (cls.value + 1)), // dummy
-                                }))}
-                            >
-                                <CartesianGrid strokeDasharray="3 3" />
-                                <XAxis dataKey="name" />
-                                <YAxis />
-                                <Tooltip />
-                                <Legend />
-                                <Line type="monotone" dataKey="enrolled" stroke="#0088FE" activeDot={{ r: 8 }} />
-                            </LineChart>
-                        </ResponsiveContainer>
-                    </CardContent>
-                </Card>
+                {/*<Card>*/}
+                {/*    <CardHeader>*/}
+                {/*        <CardTitle>Recent Enrollments</CardTitle>*/}
+                {/*    </CardHeader>*/}
+                {/*    <CardContent className="h-72">*/}
+                {/*        <ResponsiveContainer width="100%" height="100%">*/}
+                {/*            <LineChart*/}
+                {/*                data={studentsPerClassData.map((cls, idx) => ({*/}
+                {/*                    name: `Class ${idx + 1} - ${cls.name}`,*/}
+                {/*                    enrolled: Math.floor(Math.random() * (cls.value + 1)),*/}
+                {/*                }))}*/}
+                {/*            >*/}
+
+                {/*            <CartesianGrid strokeDasharray="3 3" />*/}
+                {/*                <XAxis dataKey="name" />*/}
+                {/*                <YAxis />*/}
+                {/*                <Tooltip />*/}
+                {/*                <Legend />*/}
+                {/*                <Line type="monotone" dataKey="enrolled" stroke="#0088FE" activeDot={{ r: 8 }} />*/}
+                {/*            </LineChart>*/}
+                {/*        </ResponsiveContainer>*/}
+                {/*    </CardContent>*/}
+                {/*</Card>*/}
             </div>
         </div>
     );
