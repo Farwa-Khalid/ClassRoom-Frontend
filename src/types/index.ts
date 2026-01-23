@@ -7,6 +7,15 @@ export type Subject = {
     createdAt?: string;
 };
 
+export type Student = {
+    id: number;
+    name: string;
+    email: string;
+    department?: Department; // optional if student may not have a department
+    createdAt?: string;
+    updatedAt?: string;
+};
+
 export type ListResponse<T = unknown> = {
     data?: T[];
     pagination?: {

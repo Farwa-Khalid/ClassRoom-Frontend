@@ -61,7 +61,7 @@ const ClassesShow = () => {
 
                     <div>
                         <Badge variant="outline">{capacity} spots</Badge>
-                        <Badge variant={status == 'active' ? 'default' : 'secondary'} data-status={status}>{status.toUpperCase()}</Badge>
+                        <Badge variant={status === 'active' ? 'default' : 'secondary'} data-status={status}>{status.toUpperCase()}</Badge>
                     </div>
                 </div>
 
@@ -102,20 +102,13 @@ const ClassesShow = () => {
 
                 <Separator />
 
-                <div className="join">
-                    <h2>Join Class</h2>
 
-                    <ol>
-                        <li>Ask your teacher for the invite code</li>
-                        <li>Click on "Join Class" button</li>
-                        <li>Paste the code and click "join"</li>
-                    </ol>
-                </div>
 
-                <Button size="lg" className="w-full">Join Class</Button>
+                <Button size="lg" className="w-full">View Enrolled Students</Button>
             </Card>
         </ShowView>
     )
 }
 
 export default ClassesShow
+
